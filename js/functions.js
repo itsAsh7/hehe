@@ -117,6 +117,7 @@ function showMessages() {
 	adjustWordsPosition();
 	$('#messages').fadeIn(5000, function() {
 		showLoveU();
+		$("#memorySection").fadeIn(2000); // ✨ show memory section here
 	});
 }
 
