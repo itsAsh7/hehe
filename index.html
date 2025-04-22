@@ -1,199 +1,141 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>This one is for my Prap</title>
-  <link rel="stylesheet" href="css/default.css">
-  <script src="https://kit.fontawesome.com/a14ae32021.js" crossorigin="anonymous"></script>
-  <script src="js/jquery.js"></script>
-  <script src="js/garden.js"></script>
-  <script src="js/functions.js"></script>
-  <style>
-    @font-face {
-      font-family: digit;
-      src: url('digital-7_mono.ttf') format("truetype");
-    }
+<script src="https://kit.fontawesome.com/a14ae32021.js" crossorigin="anonymous"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>This one is for my Prap</title>
 
-    #imageViewerOverlay {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.8);
-      backdrop-filter: blur(10px);
-      z-index: 1000;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      animation: fadeInOverlay 0.3s ease-in-out;
-    }
+<style type="text/css">
+@font-face {
+	font-family: digit;
+	src: url('digital-7_mono.ttf') format("truetype");
+}
+</style>
+<link href="css/default.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/garden.js"></script>
+<script type="text/javascript" src="js/functions.js"></script>
 
-    #viewerImage {
-      max-width: 90%;
-      max-height: 90%;
-      border-radius: 10px;
-      transition: transform 0.3s ease-in-out;
-    }
-
-    #viewerImage.swipe {
-      transform: scale(0.95);
-    }
-
-    #closeViewer {
-      position: absolute;
-      top: 20px;
-      right: 30px;
-      font-size: 36px;
-      color: white;
-      cursor: pointer;
-      font-weight: bold;
-      z-index: 10001;
-    }
-
-    @keyframes fadeInOverlay {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-  </style>
 </head>
+
 <body>
-  <audio id="bgMusic" src="music.mp3" loop></audio>
-  <div id="mainDiv">
-    <div id="content">
-      <div id="code">
-        <span class="comments">/**</span><br />
-        <span class="space"></span><span class="comments">*THE CODE OF LOVE</span><br />
-        <span class="space"></span><span class="comments">*/</span><br />
-        Hey Praps...sbse phele screen me kahi bhi click kro! !<br />
-        Do you remember how we met....kuch group me bkc ho rhi thi fir tum dm me aai...and wee started talking<br />
-        <span class="comments">// Start of the wierdest Love story.... </span><br />
-        After some day a spark begun to see you differently... tum hi thi mrepass tab;<br />
-        <span class="comments">// Your face Your Voice Your Words.</span><br />
-        Your everything got imprinted in my heart;<br />
-        As the time went on;<br />
-        The Bond grew stronger and stronger;<br />
-        Journey from Infatuation to Love;<br />
-        We have traveled a long way together;<br />
-        There have been fights...serious one.. we improved ;<br />
-        <span class="comments">// And I'm sure there will be more.</span><br />
-        But our Bond will always grow back Stronger... i just dont want to give up;<br />
-        <br><br>
-        All I want to say is:<br />
-        I will love you forever;<br />
-        <br><br>
-        Baki this heart for only u....<br />
-        <br>
-        <span id="heartspan">
-          <a href="image.jpg"><i class="fas fa-heart" id="icon"></i></a>
-        </span>
-      </div>
-      <div id="loveHeart">
-        <canvas id="garden"></canvas>
-        <div id="words">
-          <div id="messages">
-            FEELING YOUR BEAUTIFUL PRESENCE
-            <div id="elapseClock"></div>
-          </div>
-          <div id="loveu">
-            I LOVE YOU SO MUCH<br />
-            <div class="signature">- ASH....</div>
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <div id="memorySection">
-      <button id="openMemoriesBtn">Us</button>
-      <div id="memoryImages" style="display:none;">
-        <img src="memoriesimg1.jpg" alt="Memory 1" class="memory-img" />
-        <img src="memoriesimg2.jpg" alt="Memory 2" class="memory-img" />
-        <img src="memoriesimg3.jpg" alt="Memory 3" class="memory-img" />
-      </div>
-    </div>
-  </div>
+<!-- Background music that plays on loop -->
+<audio id="bgMusic" src="music.mp3" loop></audio>
 
-  <div id="imageViewerOverlay">
-    <span id="closeViewer">&times;</span>
-    <img id="viewerImage" src="" alt="Full View" />
-  </div>
+<div id="mainDiv">
+	<div id="content">
+		<div id="code">
+			<span class="comments">/**</span><br />
+			<span class="space"/><span class="comments">*THE CODE OF LOVE</span><br />
+			<span class="space"/><span class="comments">*/</span><br />
+			Hey Praps...sbse phele screen me kahi bhi click kro! !<br />
+			Do you remember how we met....kuch group me bkc ho rhi thi fir tum dm me aai...and wee started talking<br />
+			<span class="comments">// Start of the wierdest Love story.... </span><br />
+			After some day a spark begun to see you differently... tum hi thi mrepass tab;<br />
+			<span class="comments">// Your face Your Voice Your Words.</span><br />
+			Your everything got imprinted in my heart;<br />
+			As the time went on;<br />
+			The Bond grew stronger and stronger;<br />
+			Journey from Infatuation to Love;<br />
+			We have traveled a long way together;<br />
+			There have been fights...serious one.. we improved ;<br />
+			<span class="comments">// And I'm sure there will be more.</span><br />
+			But our Bond will always grow back Stronger... i just dont want to give up;<br />
+			<br>
+			<br>
+			All I want to say is:<br />
+			 I will love you forever;<br />
+			<br>
+			<br>
+			Baki this heart for only u....<br />
+			<br>
+			<span id="heartspan">
+			<a href="image.jpg"><i class="fas fa-heart" id="icon"></i></a>
+			</span>
+		</div>
+		<div id="loveHeart">
+			<canvas id="garden"></canvas>
+			<div id="words">
+				<div id="messages">
+					FEELING YOUR BEAUTIFUL PRESENCE
+					<div id="elapseClock"></div>
+				</div>
+				<div id="loveu">
+					I LOVE YOU SO MUCH<br/>
+			<div class="signature">- ASH....</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
-  <script>
-    const startDate = new Date("Apr 22, 2024 15:37:25");
+	<!-- Memory Section -->
+	<div id="memorySection">
+		<button id="openMemoriesBtn">Open Memories</button>
+		<div id="memoryImages" style="display:none;">
+			<img src="memoriesimg1.jpg" alt="Memory 1" class="memory-img" />
+			<img src="memoriesimg2.jpg" alt="Memory 2" class="memory-img" />
+			<img src="memoriesimg3.jpg" alt="Memory 3" class="memory-img" />
+		</div>
+	</div>
+</div>
 
-    function timeElapse() {
-      const current = new Date();
-      let seconds = Math.floor((current - startDate) / 1000);
-      const days = Math.floor(seconds / (3600 * 24));
-      seconds %= 3600 * 24;
-      let hours = Math.floor(seconds / 3600);
-      if (hours < 10) hours = "0" + hours;
-      seconds %= 3600;
-      let minutes = Math.floor(seconds / 60);
-      if (minutes < 10) minutes = "0" + minutes;
-      seconds %= 60;
-      if (seconds < 10) seconds = "0" + seconds;
-      const result = `<span class="digit">${days}</span> days <span class="digit">${hours}</span> hours <span class="digit">${minutes}</span> minutes <span class="digit">${seconds}</span> seconds`;
-      $("#elapseClock").html(result);
-    }
+<script type="text/javascript">
+// Start date for count-up timer: April 22, 2024
+var startDate = new Date("Apr 22, 2024 15:37:25");
+var offsetX = $("#loveHeart").width() / 2;
+var offsetY = $("#loveHeart").height() / 2 - 55;
 
-    setInterval(timeElapse, 1000);
+function timeElapse() {
+    var current = new Date(); // Get current time
+    var seconds = Math.floor((current - startDate) / 1000); // Calculate elapsed time in seconds
 
-    $(document).ready(function () {
-      let currentIndex = 0;
-      const images = $(".memory-img").map(function () {
-        return $(this).attr("src");
-      }).get();
+    var days = Math.floor(seconds / (3600 * 24));
+    seconds = seconds % (3600 * 24);
 
-      function showImage(index) {
-        $("#viewerImage").addClass("swipe");
-        setTimeout(() => {
-          $("#viewerImage").attr("src", images[index]).removeClass("swipe");
-        }, 150);
-      }
+    var hours = Math.floor(seconds / 3600);
+    if (hours < 10) hours = "0" + hours;
+    seconds = seconds % 3600;
 
-      $("#openMemoriesBtn").click(() => $("#memoryImages").fadeIn(1000));
+    var minutes = Math.floor(seconds / 60);
+    if (minutes < 10) minutes = "0" + minutes;
+    seconds = seconds % 60;
 
-      $(".memory-img").click(function () {
-        currentIndex = images.indexOf($(this).attr("src"));
-        showImage(currentIndex);
-        $("#imageViewerOverlay").fadeIn(400);
-      });
+    if (seconds < 10) seconds = "0" + seconds;
 
-      $("#closeViewer, #imageViewerOverlay").click(function (e) {
-        if (e.target.id === "imageViewerOverlay" || e.target.id === "closeViewer") {
-          $("#imageViewerOverlay").fadeOut(300);
-        }
-      });
+    // Display result in the elapseClock div
+    var result = "<span class=\"digit\">" + days + "</span> days <span class=\"digit\">" + hours + "</span> hours <span class=\"digit\">" + minutes + "</span> minutes <span class=\"digit\">" + seconds + "</span> seconds"; 
+    $("#elapseClock").html(result);
+}
 
-      $(document).on("keydown", function (e) {
-        if (!$("#imageViewerOverlay").is(":visible")) return;
-        if (e.key === "ArrowRight") {
-          currentIndex = (currentIndex + 1) % images.length;
-          showImage(currentIndex);
-        } else if (e.key === "ArrowLeft") {
-          currentIndex = (currentIndex - 1 + images.length) % images.length;
-          showImage(currentIndex);
-        }
-      });
+// Call the timeElapse function every second
+setInterval(timeElapse, 1000);
 
-      let startX = 0;
-      $("#imageViewerOverlay").on("touchstart", function (e) {
-        startX = e.originalEvent.touches[0].clientX;
-      });
+if (!document.createElement('canvas').getContext) {
+	var msg = document.createElement("div");
+	msg.id = "errorMsg";
+	msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+	document.body.appendChild(msg);
+	$("#code").css("display", "none")
+	$("#copyright").css("position", "absolute");
+	$("#copyright").css("bottom", "10px");
+	document.execCommand("stop");
+} else {
+	setTimeout(function () {
+		startHeartAnimation();
+	}, 5000);
 
-      $("#imageViewerOverlay").on("touchend", function (e) {
-        let endX = e.originalEvent.changedTouches[0].clientX;
-        let diff = startX - endX;
-        if (Math.abs(diff) > 50) {
-          if (diff > 0) {
-            currentIndex = (currentIndex + 1) % images.length;
-          } else {
-            currentIndex = (currentIndex - 1 + images.length) % images.length;
-          }
-          showImage(currentIndex);
-        }
-      });
-    });
-  </script>
+	adjustCodePosition();
+	$("#code").typewriter();
+}
+
+// Show memory images when button is clicked
+$(document).ready(function () {
+	$("#openMemoriesBtn").click(function () {
+		$("#memoryImages").fadeIn(1000);
+	});
+});
+</script>
+
 </body>
 </html>
